@@ -56,6 +56,10 @@ for user in users:
         for item in response["items"]:
             temp.append(item["artist"].lower())
         print(user, group, temp.count(group))
+         ws.write(count, 0, user)
+            ws.write(count, 1, group)
+            ws.write(count, 2, temp.count(group))
+            wb.save(save)
     except:
         print (user, "Access Denied")
     ws.write(count, 0, user)
